@@ -17,10 +17,7 @@ Waggle (working name) is an AI infra agent that takes a plain-language request f
 - The infrastructure logic is portable: any MCP client can drive it, not only OpenClaw.
 
 **Non-goals (for now)**
-
-- MCE/ACM governance, compliance policies and HyperShift hosted control planes.
-- Managing workloads on the provisioned clusters (other MCP servers already cover day-2 operations).
-- Exact billing: estimates are list or discounted rates, reconciled against actual spend after the fact.
+- None 
 
 ## Capabilities and rationale
 
