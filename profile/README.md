@@ -1,4 +1,4 @@
-# Waggle — Build Plan for an OpenShift Multi-Cloud Infra Agent
+# Waggle — OpenShift Multi-Cloud Infra Agent
 
 Sep 30, 2026
 
