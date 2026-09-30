@@ -99,7 +99,7 @@ Settle accounts, repos and naming before any code, so later phases don't stall o
 
 **Repositories**
 
-- [ ] `waggle-hub`: kustomize for the hub (Hive, cert renewer, External Secrets, Argo CD, Waggle)
+- [ ] `waggle-hub`: Terraform scripts to provision EKC Cluster, kustomize manifests for the hub (Hive, cert renewer, External Secrets, Argo CD, Waggle)
 - [ ] `waggle`: Go module for the API types, renderers, cost engine, optimizer and MCP server
 - [ ] `waggle-clusters`: the GitOps repo, one directory per cluster under `clusters/`
 - [ ] `waggle-agent`: OpenClaw workspace files, skill, and the eval suite
