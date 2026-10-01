@@ -47,7 +47,7 @@ flowchart TB
     agent["OpenClaw infra agent<br/>AGENTS.md rules + provision skill<br/>exec disabled, Waggle tools only"]
     git["GitOps repo<br/>one PR per cluster request<br/>reviewer merge = approval"]
 
-    subgraph hub["EKS hub (your Terraform)"]
+    subgraph hub["EKS hub"]
         watcher["Status watcher<br/>wakes the agent on install events"]
         mcp["Waggle MCP server (Go)<br/>validate · preflight · plan · submit<br/>cost engine + budget optimizer<br/>status · diagnose (reads Hive, read-only)<br/>writes only to Git, never applies"]
         life["Lifecycle controllers<br/>TTL reaper · hibernation schedules<br/>cert renewer (EKS signer) · actual-cost reconciler"]
@@ -120,7 +120,7 @@ The hub must provision and deprovision a cluster by hand-applied CRs before any 
 
 **Steps**
 
-1. Apply your Terraform for EKS; add a node group sized for Hive plus install pods (install pods are short-lived but memory-hungry).
+1. Create the EKS cluster using Terraform; add a node group sized for Hive plus install pods (install pods are short-lived but memory-hungry).
 2. In `waggle-hub`, vendor Hive's CRDs and operator manifests (`config/crds`, `config/operator`) at the pinned tag, with the image set to the matching `quay.io/openshift-hive/hive` tag.
 3. Order the apply in three layers: CRDs, then operator and RBAC, then the `HiveConfig` CR (a CR fails if its CRD is not yet established). With Argo CD, use sync waves.
 4. Create service-account token Secrets for `hiveadmission` and `hive-controllers`. Kubernetes 1.24+ no longer creates them, and Hive reads the cluster CA from one of them on non-OpenShift clusters.
