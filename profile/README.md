@@ -85,6 +85,10 @@ A request moves from chat to the agent, down to the MCP server, up to Git for ap
 6. **Enforce in code, guide in prompts.** Budget ceilings, policy and allowed regions are checked by the server; AGENTS.md only shapes behaviour.
 7. **Portable by MCP.** All infrastructure logic sits behind MCP, so any OpenClaw distribution or MCP client can drive it.
 
+## Detailed Architecture Diagram
+Below is the detailed solution architecture
+![architecture](../media/images/waggle-architecture.png)
+
 ## Phase 0: Prerequisites and decisions
 
 Settle accounts, repos and naming before any code, so later phases don't stall on access requests.
